@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리기사 실기 코딩 기출문제 (2021-2026) — 토글 답안</title>
+    <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        
+        :root {
+            /* Light Mode Default */
+            --primary: #1a73e8;
+            --bg: #f8f9fa;
+            --card: #fff;
+            --border: #dee2e6;
+            --code-bg: #f6f8fa;
+            --ans: #e8f5e9;
+            --exp: #fff3e0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, .08);
+            
+            --text-main: #222;
+            --text-sub: #555;
+            --h3-color: var(--primary);
+            --ans-border: #a5d6a7;
+            --ans-text: #2e7d32;
+            --exp-border: #ffcc80;
+            --exp-text: #e65100;
+            
+            --memo-bg: #f8f9fa;
+            --memo-text: #333;
+            --memo-time: #888;
+            --memo-btn: #555;
+            --memo-hover: #e2e6ea;
+            --memo-dropdown-bg: #fff;
+            --memo-dropdown-border: #ccc;
+            --memo-dropdown-hover: #e5e5e5;
+            --btn-bg: #66bb6a;
+            --btn-hover: #43a047;
+            --btn-close-bg: #ef5350;
+            --btn-close-hover: #d32f2f;
+            --nav-bg: var(--primary);
+            --nav-text: white;
+        }
+
+        body.dark-mode {
+            /* Dark Mode Overrides */
+            --primary: #4a5568;
+            --bg: #1a202c;
+            --card: #2d3748;
+            --border: #4a5568;
+            --code-bg: #1e1e1e;
+            --ans: #223326;
+            --exp: #3b2a1a;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            
+            --text-main: #e2e8f0;
+            --text-sub: #a0aec0;
+            --h3-color: #94a3b8;
+            --ans-border: #335038;
+            --ans-text: #a5d6a7;
+            --exp-border: #5c4328;
+            --exp-text: #ffb74d;
+            
+            --memo-bg: #1e1e1e;
+            --memo-text: #cbd5e1;
+            --memo-time: #94a3b8;
+            --memo-btn: #cbd5e1;
+            --memo-hover: #4a5568;
+            --memo-dropdown-bg: #2d3748;
+            --memo-dropdown-border: #4a5568;
+            --memo-dropdown-hover: #4a5568;
+            --btn-bg: #4a5568;
+            --btn-hover: #2d3748;
+            --btn-close-bg: #4a5568;
+            --btn-close-hover: #2d3748;
+            --nav-bg: #2d3748;
+            --nav-text: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: 'Pretendard', 'Noto Sans KR', 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 20px;
+            max-width: 960px;
+            margin: 0 auto;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin: 30px 0 10px;
+            font-size: 1.8rem;
+            transition: color 0.3s;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            font-size: .95rem;
+            transition: color 0.3s;
+        }
+
+        h2 {
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px 8px 0 0;
+            margin-top: 40px;
+            font-size: 1.3rem;
+            page-break-before: always;
+            transition: background 0.3s;
+        }
+
+        h2:first-of-type {
+            page-break-before: avoid
+        }
+
+        h3 {
+            color: var(--h3-color);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 6px;
+            margin: 28px 0 14px;
+            font-size: 1.1rem;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .problem {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0 0 8px 8px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px 18px;
+            overflow-x: auto;
+            font-size: .88rem;
+            line-height: 1.55;
+            margin: 10px 0;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        code {
+            font-family: 'Fira Code', 'Consolas', 'Courier New', monospace
+        }
+
+        details {
+            margin-top: 12px;
+            border-radius: 6px;
+            overflow: hidden
+        }
+
+        details summary {
+            cursor: pointer;
+            padding: 10px 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            user-select: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background .2s
+        }
+
+        details summary::before {
+            content: '▶';
+            font-size: .75rem;
+            transition: transform .25s
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg)
+        }
+
+        details.answer-toggle summary {
+            background: var(--ans);
+            color: var(--ans-text);
+        }
+
+        details.answer-toggle[open] summary {
+            background: var(--ans-border);
+            color: #1b5e20;
+        }
+        body.dark-mode details.answer-toggle[open] summary {
+            background: var(--ans-border);
+            color: #fff;
+        }
+
+        details.answer-toggle .answer-body {
+            background: var(--ans);
+            border: 1px solid var(--ans-border);
+            border-top: none;
+            padding: 14px 18px;
+            border-radius: 0 0 6px 6px;
+        }
+
+        details.answer-toggle .answer-body strong {
+            color: var(--ans-text);
+        }
+
+        details.explain-toggle summary {
+            background: var(--exp);
+            color: var(--exp-text);
+        }
+
+        details.explain-toggle[open] summary {
+            background: var(--exp-border);
+            color: #e65100;
+        }
+        body.dark-mode details.explain-toggle[open] summary {
+            background: var(--exp-border);
+            color: #fff;
+        }
+
+        details.explain-toggle .explain-body {
+            background: var(--exp);
+            border: 1px solid var(--exp-border);
+            border-top: none;
+            padding: 14px 18px;
+            border-radius: 0 0 6px 6px;
+            font-size: .92rem
+        }
+
+        details.explain-toggle .explain-body ol,
+        details.explain-toggle .explain-body ul {
+            margin-left: 18px
+        }
+
+        details.explain-toggle .explain-body li {
+            margin-bottom: 4px
+        }
+
+        .controls {
+            text-align: center;
+            margin: 16px 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--bg);
+            padding: 10px 0;
+            transition: background 0.3s;
+        }
+
+        .controls button {
+            padding: 8px 18px;
+            margin: 0 6px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: .9rem;
+            font-weight: 600;
+            transition: background .2s, color 0.2s;
+        }
+
+        .btn-open {
+            background: var(--btn-bg);
+            color: #fff;
+        }
+
+        .btn-open:hover {
+            background: var(--btn-hover);
+        }
+
+        .btn-close {
+            background: var(--btn-close-bg);
+            color: #fff;
+        }
+
+        .btn-close:hover {
+            background: var(--btn-close-hover);
+        }
+
+        /* Multiple Memo Style */
+        .memo-container {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border);
+        }
+        
+        /* List of memos */
+        .memo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .memo-item {
+            position: relative;
+            background: var(--memo-bg);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        .memo-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .memo-time {
+            font-size: 0.85rem;
+            color: var(--memo-time);
+            font-weight: 500;
+        }
+
+        .memo-content {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        /* 3 Dots Menu */
+        .memo-kebab {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--memo-btn);
+            user-select: none;
+            line-height: 1;
+        }
+        .memo-kebab:hover {
+            background: var(--memo-hover);
+        }
+        .memo-dropdown {
+            display: none;
+            position: absolute;
+            top: 32px;
+            right: 8px;
+            background: var(--memo-dropdown-bg);
+            border: 1px solid var(--memo-dropdown-border);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10;
+            padding: 4px 0;
+            min-width: 80px;
+        }
+        .memo-dropdown.show {
+            display: block;
+        }
+        .memo-dropdown-item {
+            padding: 6px 16px;
+            font-size: 0.9rem;
+            color: var(--memo-text);
+            cursor: pointer;
+        }
+        .memo-dropdown-item:hover {
+            background: var(--memo-dropdown-hover);
+        }
+
+        /* Edit/Input Mode */
+        .memo-edit-mode {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .memo-textarea {
+            width: 100%;
+            min-height: 40px;
+            background: transparent;
+            color: var(--memo-text);
+            border: none;
+            border-bottom: 1px solid var(--border);
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+            padding: 4px 0;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .memo-textarea:focus {
+            border-bottom: 2px solid var(--primary);
+        }
+        .memo-actions-edit {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        .memo-save-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+        .memo-save-btn:hover {
+            opacity: 0.8;
+        }
+        .memo-cancel-btn {
+            background: transparent;
+            color: var(--memo-text);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .memo-cancel-btn:hover {
+            background: var(--memo-hover);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--card);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow);
+            transition: background 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .theme-toggle:hover {
+            opacity: 0.8;
+        }
+</style>
+</head>
+
+<body>
+
+    <h1>정보처리기사 실기 코딩 기출문제</h1>
+    <p class="subtitle">2021 ~ 2026 | C · Java · Python · SQL | 답안 토글(클릭하여 열기)</p>
+
+    <div class="controls">
+        <button class="btn-open" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">전체 답안
+            열기</button>
+        <button class="btn-close" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">전체 답안
+            닫기</button>
+    </div>
+
+
+    <button id="theme-toggle-btn" class="theme-toggle">🌙 다크 모드</button>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <a href="c.html" style="text-decoration:none; padding:10px 15px; background:var(--nav-bg); color:var(--nav-text); border:1px solid var(--border); border-radius:5px; margin:0 5px; transition: background 0.3s, color 0.3s;">C 언어</a>
+        <a href="java.html" style="text-decoration:none; padding:10px 15px; background:var(--nav-bg); color:var(--nav-text); border:1px solid var(--border); border-radius:5px; margin:0 5px; transition: background 0.3s, color 0.3s;">Java</a>
+        <a href="python.html" style="text-decoration:none; padding:10px 15px; background:var(--nav-bg); color:var(--nav-text); border:1px solid var(--border); border-radius:5px; margin:0 5px; transition: background 0.3s, color 0.3s;">Python</a>
+        <a href="sql.html" style="text-decoration:none; padding:10px 15px; background:var(--nav-bg); color:var(--nav-text); border:1px solid var(--border); border-radius:5px; margin:0 5px; transition: background 0.3s, color 0.3s;">SQL</a>
+    </div>
+    <h2>Java</h2>
+
+    <!-- ── 2021 ── -->
+    <h3>2021년 1회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        int[][] a = {{45, 50, 75}, {89}};
+        System.out.println(a[0].length);
+        System.out.println(a[1].length);
+        System.out.println(a[0][0]);
+        System.out.println(a[0][1]);
+        System.out.println(a[1][0]);
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>3<br>1<br>45<br>50<br>89</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p>Java는 가변 배열(Jagged Array)을 지원합니다.</p>
+                <ol>
+                    <li><code>a[0]</code>은 {45,50,75}로 길이 3</li>
+                    <li><code>a[1]</code>은 {89}로 길이 1</li>
+                    <li>각 원소 접근은 표준 2차원 인덱싱</li>
+                </ol>
+                <p>C와 달리 Java의 2차원 배열은 각 행의 길이가 다를 수 있습니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <h3>2021년 2회</h3>
+    <div class="problem">
+        <p><strong>[문제 1]</strong> 다음 빈칸에 들어갈 키워드를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    _______ int count = 0;
+    public Main() { count++; }
+    public static void main(String[] args) {
+        Main a = new Main();
+        Main b = new Main();
+        Main c = new Main();
+        System.out.println(count);
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>static</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p><code>static</code> 변수는 클래스 레벨에서 공유됩니다. 모든 인스턴스가 하나의 <code>count</code>를 공유하므로 3번 생성하면 count=3.
+                    <code>static</code>이 아니면 main에서 인스턴스 없이 접근할 수 없습니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <div class="problem">
+        <p><strong>[문제 2]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">class Parent {
+    int x = 10;
+    void display() { System.out.println("Parent: " + x); }
+}
+class Child extends Parent {
+    int x = 20;
+    void display() { System.out.println("Child: " + (x + super.x)); }
+}
+public class Main {
+    public static void main(String[] args) {
+        Child c = new Child();
+        c.display();
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>Child: 30</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li><code>Child</code>의 <code>x = 20</code>, <code>super.x = Parent의 x = 10</code></li>
+                    <li><code>x + super.x = 20 + 10 = 30</code></li>
+                </ol>
+                <p><code>super</code> 키워드로 부모 클래스의 멤버에 접근할 수 있습니다. 필드는 오버라이드되지 않고 <strong>하이딩(hiding)</strong>됩니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <h3>2021년 3회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    static int count = 0;
+    private static Main instance;
+    private Main(){ count++; }
+    public static Main getInstance(){
+        if(instance == null) instance = new Main();
+        return instance;
+    }
+    public static void main(String[] args){
+        Main a = Main.getInstance();
+        Main b = Main.getInstance();
+        Main c = Main.getInstance();
+        System.out.println(count);
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>1</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p>이것은 <strong>싱글톤(Singleton) 패턴</strong>입니다.</p>
+                <ol>
+                    <li>첫 번째 <code>getInstance()</code> 호출: instance가 null → 새 객체 생성 → count=1</li>
+                    <li>두 번째, 세 번째 호출: instance가 이미 존재 → 기존 객체 반환 → 생성자 호출 안 됨</li>
+                </ol>
+                <p>싱글톤은 인스턴스를 하나만 만들도록 보장하는 디자인 패턴입니다. 시험에서 자주 출제됩니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- ── 2022 ── -->
+    <h3>2022년 1회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args){
+        int[] a = {1, 2, 3};
+        int[] b = a;
+        b[1] = 2000;
+        System.out.println(a[1]);
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>2000</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p>Java에서 배열은 <strong>참조 타입</strong>입니다. <code>b = a</code>는 배열을 복사하는 것이 아니라 같은 배열 객체를 가리키게 합니다.</p>
+                <p>따라서 <code>b[1] = 2000</code>을 하면 <code>a[1]</code>도 2000이 됩니다. 독립적인 복사본을 원하면
+                    <code>Arrays.copyOf()</code>나 <code>clone()</code>을 사용해야 합니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <h3>2022년 2회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args){
+        int x = 2;
+        int result = 0;
+        switch(x){
+            case 1: result += 1;
+            case 2: result += 2;
+            case 3: result += 4;
+                break;
+            case 4: result += 8;
+        }
+        System.out.println(result);
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>6</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li>x=2 → case 2 진입: result += 2 → result=2</li>
+                    <li>break 없음 → fall-through → case 3: result += 4 → result=6</li>
+                    <li>break 만남 → 탈출</li>
+                </ol>
+                <p>C와 마찬가지로 Java의 switch도 break가 없으면 다음 case로 자동 진행합니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- ✅ 수정됨: Java 2022-3 순위 알고리즘 정답 34152→35241 -->
+    <h3>2022년 3회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args){
+        int[] score = {85, 65, 90, 75, 95};
+        int[] rank = {1, 1, 1, 1, 1};
+        for(int i = 0; i &lt; 5; i++){
+            for(int j = 0; j &lt; 5; j++){
+                if(score[i] &lt; score[j]) rank[i]++;
+            }
+        }
+        for(int i = 0; i &lt; 5; i++)
+            System.out.print(rank[i]);
+        System.out.println();
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>35241</strong></div><!-- ✅ 수정: 34152→35241 -->
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p>이것은 <strong>순위(Rank) 알고리즘</strong>입니다. 모든 쌍을 비교하여, 나보다 점수가 높은 사람 수만큼 순위를 증가시킵니다.</p>
+                <ol>
+                    <li>85점: 90, 95보다 작음 → rank = 1 + 2 = <strong>3</strong></li>
+                    <li>65점: 85, 90, 75, 95보다 작음 → rank = 1 + 4 = <strong>5</strong></li>
+                    <li>90점: 95보다 작음 → rank = 1 + 1 = <strong>2</strong></li>
+                    <li>75점: 85, 90, 95보다 작음 → rank = 1 + 3 = <strong>4</strong></li>
+                    <li>95점: 자기보다 큰 점수 없음 → rank = <strong>1</strong></li>
+                </ol>
+                <p>결과: <strong>3, 5, 2, 4, 1</strong> → 이어서 출력하면 <strong>35241</strong></p>
+                <p>핵심: 초기 rank가 모두 1이고, 자기보다 높은 점수가 있을 때마다 1씩 증가시킵니다. 점수가 높을수록 순위 숫자가 작습니다(1등이 최고).</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- ── 2023 ── -->
+    <h3>2023년 1회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    static int x = 10;
+    static int y;
+    static void setY(int val){ y = val; }
+    public static void main(String[] args){
+        System.out.println(x + " " + y);
+        setY(x + 1);
+        System.out.println(x + " " + y);
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>10 0<br>10 11</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li>static 변수 y는 초기화하지 않으면 int 기본값 0</li>
+                    <li>첫 출력: x=10, y=0</li>
+                    <li><code>setY(10+1)</code> → y=11</li>
+                    <li>두 번째 출력: x=10, y=11</li>
+                </ol>
+            </div>
+        </details>
+    </div>
+
+    <h3>2023년 2회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args){
+        String s1 = new String("java");
+        String s2 = new String("java");
+        String s3 = s1;
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3);
+        System.out.println(s1.equals(s2));
+        System.out.println(s1.equals(s3));
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>false<br>true<br>true<br>true</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li><code>s1 == s2</code> → false : new로 생성하면 서로 다른 객체 → 주소가 다름</li>
+                    <li><code>s1 == s3</code> → true : s3 = s1이므로 같은 참조</li>
+                    <li><code>s1.equals(s2)</code> → true : 내용 비교 → 둘 다 "java"</li>
+                    <li><code>s1.equals(s3)</code> → true : 같은 객체이므로 당연히 true</li>
+                </ol>
+                <p><strong>핵심:</strong> <code>==</code>는 참조(주소) 비교, <code>equals()</code>는 내용 비교. 정보처리기사 시험에서 가장 자주 출제되는
+                    Java 개념 중 하나입니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <h3>2023년 3회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오. (다형성)</p>
+        <pre><code class="language-java">class A {
+    void show(){ System.out.print("A"); }
+}
+class B extends A {
+    void show(){ System.out.print("B"); }
+}
+class C extends A {
+    void show(){ System.out.print("C"); }
+}
+class D extends B {
+    void show(){ System.out.print("D"); }
+}
+public class Main {
+    public static void main(String[] args){
+        A a1 = new D();
+        A a2 = new C();
+        B b1 = new D();
+        a1.show();
+        a2.show();
+        b1.show();
+        a1.show();
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>DCDD</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p><strong>다형성(Polymorphism)</strong>: 실제 객체 타입의 메서드가 호출됩니다.</p>
+                <ol>
+                    <li><code>a1 = new D()</code> → 실제 타입 D → show()는 "D"</li>
+                    <li><code>a2 = new C()</code> → 실제 타입 C → show()는 "C"</li>
+                    <li><code>b1 = new D()</code> → 실제 타입 D → show()는 "D"</li>
+                    <li><code>a1.show()</code> → 여전히 D</li>
+                </ol>
+                <p>변수의 선언 타입(A, B)이 아니라 실제 생성된 객체의 타입(D, C)에 따라 오버라이드된 메서드가 실행됩니다. 이를 <strong>동적 바인딩</strong>이라 합니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- ── 2024 ── -->
+    <h3>2024년 1회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">class Parent {
+    int compute(int n){ return n * 2; }
+}
+class Child extends Parent {
+    int compute(int n){ return n * 3; }
+}
+public class Main {
+    public static void main(String[] args){
+        Parent p = new Child();
+        System.out.println(p.compute(3));
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>9</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li><code>Parent p = new Child()</code> → 업캐스팅</li>
+                    <li><code>p.compute(3)</code> → 실제 타입은 Child → <code>3 * 3 = 9</code></li>
+                </ol>
+                <p>메서드 오버라이딩 + 다형성 문제. 부모 타입 변수로 참조하더라도 실행 시점에는 자식의 오버라이드된 메서드가 호출됩니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <h3>2024년 2회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">interface Calc {
+    int sum(int from, int to);
+}
+class OddSum implements Calc {
+    public int sum(int from, int to){
+        int s = 0;
+        for(int i = from; i &lt;= to; i++)
+            if(i % 2 != 0) s += i;
+        return s;
+    }
+}
+class EvenSum implements Calc {
+    public int sum(int from, int to){
+        int s = 0;
+        for(int i = from; i &lt;= to; i++)
+            if(i % 2 == 0) s += i;
+        return s;
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        Calc c1 = new OddSum();
+        Calc c2 = new EvenSum();
+        System.out.println(c1.sum(1, 10));
+        System.out.println(c2.sum(1, 10));
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>25<br>30</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li>OddSum: 1+3+5+7+9 = <strong>25</strong></li>
+                    <li>EvenSum: 2+4+6+8+10 = <strong>30</strong></li>
+                </ol>
+                <p><strong>인터페이스</strong>: <code>Calc</code>는 <code>sum</code> 메서드를 정의하고, 각 클래스가 구현합니다.
+                    <code>implements</code> 키워드를 사용합니다. 인터페이스 변수로 다형적 호출이 가능합니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- ✅ 수정됨: Java 2024-3 정답 212→213, 해설 보완 -->
+    <h3>2024년 3회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args){
+        int[] arr = {3, 1, 2};
+        int temp = arr[0];
+        arr[0] = arr[2];
+        arr[2] = temp;
+        for(int v : arr)
+            System.out.print(v);
+        System.out.println();
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>213</strong></div><!-- ✅ 수정: 212→213 -->
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li>초기: arr = {3, 1, 2}</li>
+                    <li><code>temp = arr[0]</code> → temp = 3</li>
+                    <li><code>arr[0] = arr[2]</code> → arr[0] = 2</li>
+                    <li><code>arr[2] = temp</code> → arr[2] = 3</li>
+                    <li>교환 후: arr = {<strong>2</strong>, <strong>1</strong>, <strong>3</strong>}</li>
+                    <li>향상된 for문(<code>for-each</code>)으로 공백 없이 출력 → <strong>213</strong></li>
+                </ol>
+                <p>배열의 첫 번째 원소(3)와 마지막 원소(2)가 교환됩니다. <code>for(int v : arr)</code>는 배열의 모든 원소를 순회하는 향상된 for문입니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <!-- ── 2025 ── -->
+    <h3>2025년 1회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args){
+        try {
+            int a = 10;
+            int b = 0;
+            System.out.println(a / b);
+        } catch(ArithmeticException e) {
+            System.out.println("Error");
+        } finally {
+            System.out.println("Done");
+        }
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>Error<br>Done</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li>10/0 → ArithmeticException 발생</li>
+                    <li>catch 블록 실행 → "Error" 출력</li>
+                    <li>finally 블록은 예외 발생 여부와 관계없이 항상 실행 → "Done" 출력</li>
+                </ol>
+                <p><strong>try-catch-finally</strong>: 예외 처리의 기본 구조. finally는 리소스 정리 등에 사용됩니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <h3>2025년 2회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">class A {
+    String x;
+    A(String x){ this.x = x; }
+    void print(){ System.out.print(x); }
+}
+public class Main {
+    public static void main(String[] args){
+        A a = new A("A");
+        A b = new A("B");
+        A temp = a;
+        a = b;
+        b = temp;
+        a.print();
+        b.print();
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>BA</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <ol>
+                    <li>a→"A", b→"B"</li>
+                    <li>temp = a → temp→"A"</li>
+                    <li>a = b → a→"B"</li>
+                    <li>b = temp → b→"A"</li>
+                    <li>a.print() → "B", b.print() → "A"</li>
+                </ol>
+                <p>참조 변수의 swap입니다. 객체 자체가 바뀌는 것이 아니라, 참조(화살표)만 교환됩니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <h3>2025년 3회</h3>
+    <div class="problem">
+        <p><strong>[문제]</strong> 다음 빈칸에 들어갈 키워드를 쓰시오.</p>
+        <pre><code class="language-java">interface Animal {
+    void sound();
+}
+class Dog ________ Animal {
+    public void sound(){
+        System.out.println("Bark");
+    }
+}
+public class Main {
+    public static void main(String[] args){
+        Animal a = new Dog();
+        a.sound();
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>implements</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p>인터페이스를 구현할 때는 <code>implements</code> 키워드를 사용합니다.</p>
+                <p>클래스 상속은 <code>extends</code>, 인터페이스 구현은 <code>implements</code>. 인터페이스의 모든 메서드를 구현 클래스에서 오버라이드해야 합니다.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- ── 2026 ── -->
+    <h3>2026년 1회</h3>
+    <div class="problem">
+        <p><strong>[문제 1]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">class Base {
+    int getValue(){ return 1; }
+}
+class Derived extends Base {
+    int getValue(){ return 2; }
+}
+public class Main {
+    public static void main(String[] args){
+        Base b = new Derived();
+        System.out.println(b.getValue());
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>2</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p>다형성: 실제 객체 타입은 <code>Derived</code>이므로 오버라이드된 <code>getValue()</code>가 호출되어 2를 반환합니다.</p>
+            </div>
+        </details>
+    </div>
+
+    <div class="problem">
+        <p><strong>[문제 2]</strong> 다음 Java 프로그램의 실행 결과를 쓰시오.</p>
+        <pre><code class="language-java">public class Main {
+    public static void main(String[] args){
+        String a = "1";
+        String b = "123";
+        System.out.println(a + b);
+    }
+}</code></pre>
+        <details class="answer-toggle">
+            <summary>정답 보기</summary>
+            <div class="answer-body"><strong>1123</strong></div>
+        </details>
+        <details class="explain-toggle">
+            <summary>해설 보기</summary>
+            <div class="explain-body">
+                <p>Java에서 String의 <code>+</code> 연산자는 문자열 연결(concatenation)입니다. 숫자가 아니라 문자열이므로 산술 덧셈이 아닙니다.</p>
+                <p><code>"1" + "123" = "1123"</code></p>
+            </div>
+        </details>
+    </div>
+
+    <div style="text-align:center;margin:40px 0;padding:20px;background:var(--code-bg);border:1px solid var(--border);transition:background 0.3s, border-color 0.3s;border-radius:8px;">
+        <p style="font-size:1.1rem;color:var(--ans-text);font-weight:700;">학습 TIP</p>
+        <p>1. 먼저 코드를 직접 손으로 트레이싱한 후 답을 확인하세요.</p>
+        <p>2. 틀린 문제는 체크(✓)하고, 반복 학습하세요.</p>
+        <p>3. 인쇄 시 Ctrl+P → 답안이 자동으로 펼쳐집니다.</p>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('theme-toggle-btn');
+            const hljsTheme = document.getElementById('hljs-theme');
+            
+            // Apply Theme
+            const applyTheme = (isDark) => {
+                if (isDark) {
+                    body.classList.add('dark-mode');
+                    toggleBtn.innerHTML = '☀️ 라이트 모드';
+                    if(hljsTheme) hljsTheme.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css';
+                } else {
+                    body.classList.remove('dark-mode');
+                    toggleBtn.innerHTML = '🌙 다크 모드';
+                    if(hljsTheme) hljsTheme.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css';
+                }
+            };
+
+            // Check saved theme
+            const savedTheme = localStorage.getItem('theme');
+            applyTheme(savedTheme === 'dark');
+
+            toggleBtn.addEventListener('click', () => {
+                const isDark = !body.classList.contains('dark-mode');
+                applyTheme(isDark);
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.memo-kebab')) {
+                    document.querySelectorAll('.memo-dropdown.show').forEach(el => {
+                        el.classList.remove('show');
+                    });
+                }
+            });
+
+            const getFormattedTime = () => {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const date = String(now.getDate()).padStart(2, '0');
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                return `${year}. ${month}. ${date}. ${hours}:${minutes}`;
+            };
+
+            const pageName = window.location.pathname.split("/").pop().split(".")[0] || "index";
+            const problems = document.querySelectorAll('.problem');
+            
+            problems.forEach((prob, index) => {
+                const memoKey = `memo_${pageName}_${index}`;
+                
+                const memoContainer = document.createElement('div');
+                memoContainer.className = 'memo-container';
+                
+                const memoListDiv = document.createElement('div');
+                memoListDiv.className = 'memo-list';
+                
+                const inputDiv = document.createElement('div');
+                inputDiv.className = 'memo-edit-mode';
+                
+                const textarea = document.createElement('textarea');
+                textarea.className = 'memo-textarea';
+                textarea.placeholder = "여기에 새 메모를 추가하세요...";
+                
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'memo-actions-edit';
+                
+                const cancelBtn = document.createElement('button');
+                cancelBtn.className = 'memo-cancel-btn';
+                cancelBtn.textContent = '취소';
+                
+                const saveBtn = document.createElement('button');
+                saveBtn.className = 'memo-save-btn';
+                saveBtn.textContent = '추가';
+                
+                actionsDiv.appendChild(cancelBtn);
+                actionsDiv.appendChild(saveBtn);
+                
+                inputDiv.appendChild(textarea);
+                inputDiv.appendChild(actionsDiv);
+                
+                memoContainer.appendChild(memoListDiv);
+                memoContainer.appendChild(inputDiv);
+                prob.appendChild(memoContainer);
+
+                // Global state for this problem's memos
+                let memos = [];
+                let editingIndex = -1; // -1 means creating new
+                
+                const saveMemosToStorage = () => {
+                    localStorage.setItem(memoKey, JSON.stringify(memos));
+                };
+
+                const renderMemos = () => {
+                    memoListDiv.innerHTML = '';
+                    memos.forEach((memo, i) => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'memo-item';
+                        
+                        const headerDiv = document.createElement('div');
+                        headerDiv.className = 'memo-header';
+                        
+                        const timeSpan = document.createElement('span');
+                        timeSpan.className = 'memo-time';
+                        timeSpan.textContent = memo.time;
+                        headerDiv.appendChild(timeSpan);
+                        
+                        const kebabBtn = document.createElement('div');
+                        kebabBtn.className = 'memo-kebab';
+                        kebabBtn.innerHTML = '⋮';
+                        
+                        const dropdown = document.createElement('div');
+                        dropdown.className = 'memo-dropdown';
+                        
+                        const editItem = document.createElement('div');
+                        editItem.className = 'memo-dropdown-item';
+                        editItem.textContent = '수정';
+                        
+                        const deleteItem = document.createElement('div');
+                        deleteItem.className = 'memo-dropdown-item';
+                        deleteItem.textContent = '삭제';
+                        
+                        dropdown.appendChild(editItem);
+                        dropdown.appendChild(deleteItem);
+                        
+                        kebabBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            document.querySelectorAll('.memo-dropdown.show').forEach(el => {
+                                if (el !== dropdown) el.classList.remove('show');
+                            });
+                            dropdown.classList.toggle('show');
+                        });
+                        
+                        deleteItem.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            dropdown.classList.remove('show');
+                            if(confirm('메모를 삭제하시겠습니까?')) {
+                                memos.splice(i, 1);
+                                saveMemosToStorage();
+                                renderMemos();
+                            }
+                        });
+                        
+                        editItem.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            dropdown.classList.remove('show');
+                            editingIndex = i;
+                            textarea.value = memo.text;
+                            saveBtn.textContent = '수정 완료';
+                            textarea.focus();
+                        });
+
+                        const contentDiv = document.createElement('div');
+                        contentDiv.className = 'memo-content';
+                        contentDiv.textContent = memo.text;
+                        
+                        itemDiv.appendChild(headerDiv);
+                        itemDiv.appendChild(kebabBtn);
+                        itemDiv.appendChild(dropdown);
+                        itemDiv.appendChild(contentDiv);
+                        
+                        memoListDiv.appendChild(itemDiv);
+                    });
+                };
+
+                // Load initial memos
+                const loadInitialData = () => {
+                    const savedData = localStorage.getItem(memoKey);
+                    if(savedData) {
+                        try {
+                            const parsed = JSON.parse(savedData);
+                            if(Array.isArray(parsed)) {
+                                memos = parsed;
+                            } else if (parsed && parsed.text) {
+                                memos = [parsed];
+                            }
+                        } catch(e) {
+                            memos = [{text: savedData, time: '이전 메모'}];
+                        }
+                    }
+                    renderMemos();
+                };
+                
+                loadInitialData();
+                
+                // Actions
+                saveBtn.addEventListener('click', function() {
+                    const text = textarea.value.trim();
+                    if(text) {
+                        if (editingIndex > -1) {
+                            memos[editingIndex].text = text;
+                            memos[editingIndex].time = getFormattedTime() + ' (수정됨)';
+                        } else {
+                            memos.push({ text: text, time: getFormattedTime() });
+                        }
+                        saveMemosToStorage();
+                        
+                        // Reset input
+                        textarea.value = '';
+                        editingIndex = -1;
+                        saveBtn.textContent = '추가';
+                        renderMemos();
+                    }
+                });
+
+                cancelBtn.addEventListener('click', function() {
+                    textarea.value = '';
+                    editingIndex = -1;
+                    saveBtn.textContent = '추가';
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
